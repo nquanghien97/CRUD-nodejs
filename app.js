@@ -30,6 +30,14 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/api/countries', (req, res) => {
+  res.body.json();
+});
+
+app.get('/api/countries/:countryId', (req, res) => {
+  res.body.json();
+});
+
 app.listen(port, () => {
   console.log(`Our server is live on ${port}`);
 });
