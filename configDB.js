@@ -1,0 +1,1 @@
+export const URI_DB = 'mongodb+srv://nquanghien:quanghien119@cluster0.v8vmxmj.mongodb.net/?retryWrites=true&w=majority'
