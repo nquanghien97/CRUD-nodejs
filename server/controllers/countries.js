@@ -35,7 +35,7 @@ export function getAllCountries(req, res) {
     return res.status(200).json({
       success: true,
       message: 'A list of all Country',
-      Course: allCountries,
+      Country: allCountries,
     });
   })
   .catch((err) => {

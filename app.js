@@ -10,12 +10,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logger('dev'));
-
 app.use('/api/', mainRoutes);
 
 const port = 8080;
 
 // set up mongoose
+mongoose.set("strictQuery", false);
+
 mongoose.connect(URI_DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(()=> {
     console.log('Database connected');
@@ -28,14 +29,6 @@ app.get('/', (req, res) => {
   res.status(200).json({
     message: 'Welcome to Project CRUD!!',
   });
-});
-
-app.get('/api/countries', (req, res) => {
-  res.body.json();
-});
-
-app.get('/api/countries/:countryId', (req, res) => {
-  res.body.json();
 });
 
 app.listen(port, () => {
