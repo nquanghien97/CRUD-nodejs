@@ -87,8 +87,8 @@ export function updateCountry(req, res) {
 }
 
 export function deleteCountry(req, res) {
-  const id = req.params.id;
-  Country.findByIdAndRemove(id)
+  const id = req.params.countryId;
+  Country.findByIdAndDelete(id)
     .exec()
     .then(() => {
       res.status(200).json({

@@ -1,18 +1,20 @@
 import express from 'express';
 import logger from 'morgan';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import mainRoutes from './server/routes/main.js';
 import { URI_DB } from './configDB.js'
 
 
 const app = express();
+app.use(cors())
+const port = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(logger('dev'));
-app.use('/api/', mainRoutes);
+app.use('/', mainRoutes);
 
-const port = 8080;
 
 // set up mongoose
 mongoose.set("strictQuery", false);
